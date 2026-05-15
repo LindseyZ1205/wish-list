@@ -83,10 +83,6 @@ function App() {
             </button>
           ))}
         </div>
-        <button className="add-btn" onClick={handleAddWish}>
-          <Plus size={20} style={{ marginRight: '0.5rem' }} />
-          新愿望
-        </button>
       </div>
 
       <div style={{ marginBottom: '1rem' }}>
@@ -101,6 +97,13 @@ function App() {
             {owner === 'all' ? '全部' : owner === 'lindsey' ? 'Lindsey' : owner === 'lucia' ? 'Lucia' : 'Both'}
           </button>
         ))}
+      </div>
+
+      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        <button className="add-btn" onClick={handleAddWish}>
+          <Plus size={20} style={{ marginRight: '0.5rem' }} />
+          新愿望
+        </button>
       </div>
 
       {loading ? (
