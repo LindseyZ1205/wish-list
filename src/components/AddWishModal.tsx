@@ -53,7 +53,7 @@ export default function AddWishModal({ onClose, onWishAdded }: AddWishModalProps
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <h2 style={{ marginBottom: '1.5rem', color: '#5a4a6a' }}>✨ 添加新愿望</h2>
+        <h2 style={{ marginBottom: '0.8rem', color: '#5a4a6a', fontSize: '1.3rem' }}>✨ 添加新愿望</h2>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
