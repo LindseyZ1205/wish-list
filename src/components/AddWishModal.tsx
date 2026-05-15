@@ -67,71 +67,79 @@ export default function AddWishModal({ onClose, onWishAdded }: AddWishModalProps
             />
           </div>
 
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
+            <div className="form-group">
+              <label>分类 *</label>
+              <select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value as any })}>
+                <option value="travel">🌍 旅行</option>
+                <option value="lifestyle">💑 生活</option>
+                <option value="growth">💼 成长</option>
+                <option value="quality">💝 品质</option>
+                <option value="other">🎯 其他</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label>由谁提出 *</label>
+              <select value={formData.owner} onChange={(e) => setFormData({ ...formData, owner: e.target.value as any })}>
+                <option value="lindsey">Lindsey</option>
+                <option value="lucia">Lucia</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
+            <div className="form-group">
+              <label>时间跨度 *</label>
+              <select value={formData.timeframe} onChange={(e) => setFormData({ ...formData, timeframe: e.target.value as any })}>
+                <option value="short">短期</option>
+                <option value="medium">中期</option>
+                <option value="long">长期</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label>状态 *</label>
+              <select value={formData.status} onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}>
+                <option value="not_started">未开始</option>
+                <option value="planning">计划中</option>
+                <option value="in_progress">进行中</option>
+                <option value="completed">已完成</option>
+              </select>
+            </div>
+          </div>
+
           <div className="form-group">
-            <label>描述</label>
+            <label>描述（可选）</label>
             <textarea
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              placeholder="详细说明你的愿望..."
+              placeholder="详细说明..."
+              style={{ minHeight: '60px' }}
             />
           </div>
 
-          <div className="form-group">
-            <label>分类 *</label>
-            <select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value as any })}>
-              <option value="travel">🌍 旅行与冒险</option>
-              <option value="lifestyle">💑 生活与家庭</option>
-              <option value="growth">💼 自我成长</option>
-              <option value="quality">💝 品质生活</option>
-              <option value="other">🎯 其他梦想</option>
-            </select>
-          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
+            <div className="form-group">
+              <label>预算（可选）</label>
+              <input
+                type="text"
+                value={formData.budget}
+                onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                placeholder="如：1000-2000元"
+              />
+            </div>
 
-          <div className="form-group">
-            <label>由谁提出 *</label>
-            <select value={formData.owner} onChange={(e) => setFormData({ ...formData, owner: e.target.value as any })}>
-              <option value="lindsey">Lindsey</option>
-              <option value="lucia">Lucia</option>
-              <option value="both">Both</option>
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label>时间跨度 *</label>
-            <select value={formData.timeframe} onChange={(e) => setFormData({ ...formData, timeframe: e.target.value as any })}>
-              <option value="short">短期 (1年内)</option>
-              <option value="medium">中期 (1-5年)</option>
-              <option value="long">长期 (5-10年)</option>
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label>状态 *</label>
-            <select value={formData.status} onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}>
-              <option value="not_started">未开始</option>
-              <option value="planning">计划中</option>
-              <option value="in_progress">进行中</option>
-              <option value="completed">已完成</option>
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label>预算（可选）</label>
-            <input
-              type="text"
-              value={formData.budget}
-              onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-              placeholder="比如：1000-2000元"
-            />
-          </div>
-
-          <div className="form-group">
-            <label>备注（可选）</label>
-            <textarea
-              value={formData.notes}
-              onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-              placeholder="补充说明..."
-            />
+            <div className="form-group">
+              <label>备注（可选）</label>
+              <input
+                type="text"
+                value={formData.notes}
+                onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                placeholder="补充说明..."
+              />
+            </div>
           </div>
 
           <div className="form-buttons">
